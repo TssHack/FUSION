@@ -58,6 +58,7 @@
       color: var(--text-light);
       position: relative;
       overflow-x: hidden;
+      width: 100%;
     }
     
     /* بک‌گراند گرادیان متحرک */
@@ -339,6 +340,9 @@
       padding: 20px;
       position: relative;
       z-index: 1;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
     }
     
     /* هدر گیمینگ پیشرفته */
@@ -347,11 +351,13 @@
       margin: 30px 0;
       animation: fadeInUp 1s ease-out;
       position: relative;
+      width: 100%;
     }
     
     .profile-container {
       position: relative;
       margin-bottom: 30px;
+      display: inline-block;
     }
     
     /* حلقه‌های انیمیشنی دور تصویر پروفایل */
@@ -569,6 +575,7 @@
       z-index: 1;
       transform-style: preserve-3d;
       perspective: 1000px;
+      width: 100%;
     }
     
     /* افکت 3D برای دکمه‌ها */
@@ -705,6 +712,7 @@
       position: relative;
       overflow: hidden;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      width: 100%;
     }
     
     /* افکت نوری دور کارت آدرس */
@@ -811,6 +819,7 @@
       overflow: hidden;
       height: 300px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      width: 100%;
     }
     
     .map-iframe {
@@ -819,6 +828,7 @@
       border: none;
       filter: saturate(1.2) contrast(1.1) hue-rotate(200deg);
       transition: filter 0.3s ease;
+      min-height: 300px;
     }
     
     .map-container:hover .map-iframe {
@@ -830,12 +840,11 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -100%) rotate(-45deg);
       width: 40px;
       height: 40px;
       background: var(--neon-red);
       border-radius: 50% 50% 50% 0;
-      transform: translate(-50%, -100%) rotate(-45deg);
       box-shadow: 0 0 20px rgba(255, 0, 64, 0.8);
       animation: marker-pulse 2s infinite;
       z-index: 10;
@@ -994,14 +1003,52 @@
         height: 250px;
       }
       
+      .map-iframe {
+        min-height: 250px;
+      }
+      
       .hours-grid {
         grid-template-columns: 1fr;
+      }
+      
+      /* بهبود نمایش نقشه در موبایل */
+      .map-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+      }
+      
+      /* بهبود نمایش کارت آدرس */
+      .address-card {
+        padding: 20px;
+        margin: 0 10px;
+      }
+      
+      .address-item {
+        padding: 12px;
+        gap: 10px;
+      }
+      
+      .address-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+      }
+      
+      .address-value {
+        font-size: 14px;
+        line-height: 1.4;
       }
     }
     
     @media (max-width: 480px) {
+      .container {
+        padding: 10px;
+      }
+      
       .buttons-container {
-        max-width: 320px;
+        max-width: 100%;
+        gap: 15px;
       }
       
       .gaming-button {
@@ -1017,18 +1064,153 @@
       }
       
       .address-card {
-        padding: 20px;
+        padding: 15px;
+        margin: 0 5px;
       }
       
       .address-item {
-        padding: 12px;
-        gap: 12px;
+        padding: 10px;
+        gap: 8px;
       }
       
       .address-icon {
-        width: 35px;
-        height: 35px;
-        font-size: 18px;
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+      }
+      
+      .address-value {
+        font-size: 13px;
+      }
+      
+      .business-name {
+        font-size: clamp(24px, 8vw, 32px);
+      }
+      
+      .business-subtitle {
+        font-size: clamp(14px, 4vw, 18px);
+      }
+      
+      .map-container {
+        height: 200px;
+      }
+      
+      .map-iframe {
+        min-height: 200px;
+      }
+      
+      /* بهبود نمایش فوتر */
+      .footer {
+        padding: 15px;
+        font-size: 14px;
+      }
+      
+      /* بهبود نمایش ساعت کاری */
+      .working-hours {
+        padding: 15px;
+      }
+      
+      .hours-title {
+        font-size: 16px;
+      }
+      
+      .hours-item {
+        padding: 6px 10px;
+        font-size: 13px;
+      }
+      
+      /* بهبود نمایش پروفایل */
+      .profile-container {
+        margin-bottom: 20px;
+      }
+      
+      .profile-image {
+        width: 120px;
+        height: 120px;
+      }
+      
+      .profile-rings {
+        width: 120px;
+        height: 120px;
+      }
+    }
+    
+    /* رفع مشکل اسکرول افقی */
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    
+    /* بهبود عملکرد در اندروید */
+    @media (max-width: 480px) {
+      /* کاهش افکت‌های گرافیکی برای بهبود عملکرد */
+      .animated-bg {
+        animation-duration: 20s;
+      }
+      
+      .light-orb {
+        animation-duration: 30s;
+      }
+      
+      .grid-plane {
+        animation-duration: 40s;
+      }
+      
+      .digital-particle {
+        animation-duration: 15s;
+      }
+      
+      .shape {
+        animation-duration: 25s;
+      }
+      
+      .laser-line {
+        animation-duration: 10s;
+      }
+      
+      .wave {
+        animation-duration: 25s;
+      }
+      
+      /* کاهش شفافیت پس‌زمینه برای بهبود خوانایی */
+      .address-card {
+        background: rgba(15, 21, 47, 0.85);
+      }
+      
+      .gaming-button {
+        background: rgba(15, 21, 47, 0.9);
+      }
+      
+      .working-hours {
+        background: rgba(15, 21, 47, 0.85);
+      }
+      
+      /* بهبود نمایش افکت‌ها */
+      .light-orb {
+        filter: blur(60px);
+      }
+      
+      .orb1 {
+        width: 400px;
+        height: 400px;
+      }
+      
+      .orb2 {
+        width: 350px;
+        height: 350px;
+      }
+      
+      .orb3 {
+        width: 300px;
+        height: 300px;
+      }
+      
+      .digital-particle {
+        font-size: 12px;
+      }
+      
+      .shape {
+        transform: scale(0.7);
       }
     }
   </style>
@@ -1183,10 +1365,13 @@
   
   <!-- اسکریپت‌های انیمیشن -->
   <script>
+    // تشخیص دستگاه موبایل
+    const isMobile = window.innerWidth <= 768;
+    
     // ایجاد ذرات دیجیتال
     document.addEventListener('DOMContentLoaded', function() {
       const digitalParticles = document.getElementById('digital-particles');
-      const particleCount = 50;
+      const particleCount = isMobile ? 20 : 50;
       const characters = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
       
       for (let i = 0; i < particleCount; i++) {
@@ -1221,7 +1406,7 @@
     // ایجاد اشکال هندسی
     document.addEventListener('DOMContentLoaded', function() {
       const geometricShapes = document.getElementById('geometric-shapes');
-      const shapeCount = 15;
+      const shapeCount = isMobile ? 8 : 15;
       const shapes = ['triangle', 'square', 'hexagon'];
       
       for (let i = 0; i < shapeCount; i++) {
@@ -1250,7 +1435,7 @@
     // ایجاد خطوط لیزری
     document.addEventListener('DOMContentLoaded', function() {
       const laserLines = document.getElementById('laser-lines');
-      const lineCount = 5;
+      const lineCount = isMobile ? 3 : 5;
       
       for (let i = 0; i < lineCount; i++) {
         const line = document.createElement('div');
@@ -1281,6 +1466,20 @@
         block: 'center'
       });
     });
+    
+    // بهینه‌سازی عملکرد انیمیشن‌ها در موبایل
+    if (isMobile) {
+      // کاهش کیفیت افکت‌ها برای بهبود عملکرد
+      document.querySelectorAll('.light-orb').forEach(orb => {
+        orb.style.filter = 'blur(60px)';
+      });
+      
+      // غیرفعال کردن برخی انیمیشن‌ها در دستگاه‌های ضعیف
+      if (navigator.hardwareConcurrency < 4) {
+        document.querySelector('.grid-3d').style.display = 'none';
+        document.querySelector('.geometric-shapes').style.display = 'none';
+      }
+    }
   </script>
   
   <!-- Structured Data for SEO -->
