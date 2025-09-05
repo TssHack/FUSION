@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FUSION | مرکز تخصصی تجهیزات کامپیوتری</title>
+  <meta name="description" content="FUSION - بهترین تجهیزات گیمینگ، کامپیوترهای حرفه‌ای و لوازم جانبی با تضمین کیفیت. مجتمع کامپیوتری سهند، طبقه همکف، پلاک 24">
+  <meta name="keywords" content="گیمینگ, تجهیزات کامپیوتری, فروشگاه گیم, کامپیوتر گیمینگ, لوازم جانبی, کارت گرافیک, پردازنده">
+  <meta name="author" content="احسان فضلی">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com/">
+  <meta property="og:title" content="FUSION | مرکز تخصصی تجهیزات کامپیوتری">
+  <meta property="og:description" content="FUSION - بهترین تجهیزات گیمینگ، کامپیوترهای حرفه‌ای و لوازم جانبی با تضمین کیفیت">
+  <meta property="og:image" content="https://via.placeholder.com/1200x630">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://yourwebsite.com/">
+  <meta property="twitter:title" content="FUSION | مرکز تخصصی تجهیزات کامپیوتری">
+  <meta property="twitter:description" content="FUSION - بهترین تجهیزات گیمینگ، کامپیوترهای حرفه‌ای و لوازم جانبی با تضمین کیفیت">
+  <meta property="twitter:image" content="https://via.placeholder.com/1200x630">
+  
+  <!-- فونت‌های فارسی -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Yekan+Bakh:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --primary-color: #6a11cb;
+      --secondary-color: #2575fc;
+      --accent-color: #ff2a6d;
+      --dark-bg: #0a0e27;
+      --card-bg: rgba(15, 21, 47, 0.7);
+      --text-light: #e0e6ed;
+      --neon-blue: #00d9ff;
+      --neon-purple: #9d00ff;
+      --neon-pink: #ff0080;
+      --neon-green: #00ff88;
+      --neon-orange: #ff9500;
+      --neon-red: #ff0040;
+      --neon-yellow: #ffeb3b;
+    }
+    body {
+      font-family: 'Vazirmatn', 'Yekan Bakh', sans-serif;
+      min-height: 100vh;
+      background: var(--dark-bg);
+      color: var(--text-light);
+      position: relative;
+      overflow-x: hidden;
+    }
+    
+    /* بک‌گراند گرادیان متحرک */
+    .animated-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #0a0e27, #1a1f3a, #0f1729);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      z-index: -5;
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    /* لایه‌های نوری متحرک */
+    .light-layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -4;
+    }
+    .light-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.6;
+      animation: float 20s infinite ease-in-out;
+    }
+    .orb1 {
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--neon-blue), transparent);
+      top: -200px;
+      left: -200px;
+      animation-duration: 25s;
+    }
+    .orb2 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, var(--neon-purple), transparent);
+      bottom: -150px;
+      right: -150px;
+      animation-duration: 30s;
+      animation-delay: -5s;
+    }
+    .orb3 {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--neon-pink), transparent);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation-duration: 35s;
+      animation-delay: -10s;
+    }
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(100px, -100px) scale(1.1); }
+      66% { transform: translate(-100px, 100px) scale(0.9); }
+    }
+    
+    /* شبکه سه‌بعدی متحرک */
+    .grid-3d {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -3;
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+    .grid-plane {
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      top: -50%;
+      left: -50%;
+      background-image: 
+        linear-gradient(rgba(0, 217, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 217, 255, 0.1) 1px, transparent 1px);
+      background-size: 50px 50px;
+      transform: rotateX(60deg) rotateZ(45deg);
+      animation: grid-rotate 30s linear infinite;
+    }
+    @keyframes grid-rotate {
+      0% { transform: rotateX(60deg) rotateZ(45deg) translateZ(0); }
+      100% { transform: rotateX(60deg) rotateZ(45deg) translateZ(100px); }
+    }
+    
+    /* ذرات دیجیتال متحرک */
+    .digital-particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      overflow: hidden;
+    }
+    .digital-particle {
+      position: absolute;
+      color: var(--neon-blue);
+      font-family: monospace;
+      font-size: 14px;
+      opacity: 0.3;
+      animation: digital-fall linear infinite;
+    }
+    @keyframes digital-fall {
+      0% {
+        transform: translateY(-100vh) translateX(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.3;
+      }
+      90% {
+        opacity: 0.3;
+      }
+      100% {
+        transform: translateY(100vh) translateX(100px);
+        opacity: 0;
+      }
+    }
+    
+    /* اشکال هندسی متحرک */
+    .geometric-shapes {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+    .shape {
+      position: absolute;
+      border: 1px solid;
+      opacity: 0.2;
+      animation: shape-float 20s infinite ease-in-out;
+    }
+    .triangle {
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 86px solid var(--neon-green);
+      filter: drop-shadow(0 0 10px var(--neon-green));
+    }
+    .square {
+      width: 60px;
+      height: 60px;
+      border-color: var(--neon-orange);
+      filter: drop-shadow(0 0 10px var(--neon-orange));
+    }
+    .hexagon {
+      width: 60px;
+      height: 33px;
+      background-color: var(--neon-red);
+      position: relative;
+      filter: drop-shadow(0 0 10px var(--neon-red));
+    }
+    .hexagon:before,
+    .hexagon:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+    }
+    .hexagon:before {
+      bottom: 100%;
+      border-bottom: 17px solid var(--neon-red);
+    }
+    .hexagon:after {
+      top: 100%;
+      border-top: 17px solid var(--neon-red);
+    }
+    @keyframes shape-float {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      25% {
+        transform: translateY(-50px) rotate(90deg);
+      }
+      50% {
+        transform: translateY(0) rotate(180deg);
+      }
+      75% {
+        transform: translateY(50px) rotate(270deg);
+      }
+    }
+    
+    /* خطوط لیزری متحرک */
+    .laser-lines {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+    .laser-line {
+      position: absolute;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+      animation: laser-scan 8s linear infinite;
+      opacity: 0.5;
+    }
+    @keyframes laser-scan {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.5;
+      }
+      90% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+    }
+    
+    /* موج‌های سینوسی */
+    .sine-waves {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      z-index: -1;
+      opacity: 0.3;
+    }
+    .wave {
+      position: absolute;
+      width: 200%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%2300d9ff'/%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%239d00ff'/%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' fill='%23ff0080'/%3E%3C/svg%3E");
+      background-size: 50% 100%;
+      animation: wave-move 20s linear infinite;
+    }
+    .wave1 {
+      animation-duration: 15s;
+      opacity: 0.5;
+    }
+    .wave2 {
+      animation-duration: 20s;
+      animation-delay: -5s;
+      opacity: 0.3;
+    }
+    .wave3 {
+      animation-duration: 25s;
+      animation-delay: -10s;
+      opacity: 0.2;
+    }
+    @keyframes wave-move {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    
+    /* کانتینر اصلی */
+    .container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* هدر گیمینگ پیشرفته */
+    .header {
+      text-align: center;
+      margin: 30px 0;
+      animation: fadeInUp 1s ease-out;
+      position: relative;
+    }
+    
+    .profile-container {
+      position: relative;
+      margin-bottom: 30px;
+    }
+    
+    /* حلقه‌های انیمیشنی دور تصویر پروفایل */
+    .profile-rings {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      animation: rotate 20s linear infinite;
+    }
+    .profile-rings::before,
+    .profile-rings::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      border: 2px solid transparent;
+    }
+    .profile-rings::before {
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border-top-color: var(--neon-blue);
+      border-right-color: var(--neon-purple);
+      animation: rotate-ring 3s linear infinite;
+    }
+    .profile-rings::after {
+      top: -20px;
+      left: -20px;
+      right: -20px;
+      bottom: -20px;
+      border-bottom-color: var(--neon-pink);
+      border-left-color: var(--neon-green);
+      animation: rotate-ring 4s linear infinite reverse;
+    }
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes rotate-ring {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .profile-image {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid transparent;
+      background: linear-gradient(var(--dark-bg), var(--dark-bg)) padding-box,
+                  linear-gradient(45deg, var(--neon-blue), var(--neon-purple), var(--neon-pink)) border-box;
+      box-shadow: 0 0 25px rgba(0, 217, 255, 0.5);
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+      position: relative;
+      z-index: 2;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 15px rgba(0, 217, 255, 0.5); }
+      50% { box-shadow: 0 0 30px rgba(0, 217, 255, 0.8); }
+      100% { box-shadow: 0 0 15px rgba(0, 217, 255, 0.5); }
+    }
+    .profile-image:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 35px rgba(0, 217, 255, 0.9);
+    }
+    
+    .business-name {
+      font-family: 'Yekan Bakh', sans-serif;
+      font-size: clamp(28px, 6vw, 42px);
+      font-weight: 800;
+      background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple), var(--neon-pink));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    /* افکت پیشرفته glitch */
+    .glitch {
+      position: relative;
+    }
+    .glitch::before,
+    .glitch::after {
+      content: "FUSION";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple), var(--neon-pink));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+    }
+    .glitch::before {
+      animation: glitch-anim 3s infinite linear alternate-reverse;
+      color: var(--neon-blue);
+      z-index: -1;
+    }
+    .glitch::after {
+      animation: glitch-anim2 2s infinite linear alternate-reverse;
+      color: var(--neon-pink);
+      z-index: -2;
+    }
+    @keyframes glitch-anim {
+      0% { clip: rect(32px, 9999px, 40px, 0); transform: translate(0, -2px); }
+      5% { clip: rect(85px, 9999px, 93px, 0); transform: translate(0, 3px); }
+      10% { clip: rect(23px, 9999px, 31px, 0); transform: translate(0, -1px); }
+      15% { clip: rect(67px, 9999px, 75px, 0); transform: translate(0, 2px); }
+      20% { clip: rect(15px, 9999px, 23px, 0); transform: translate(0, -3px); }
+      25% { clip: rect(53px, 9999px, 61px, 0); transform: translate(0, 1px); }
+      30% { clip: rect(35px, 9999px, 43px, 0); transform: translate(0, -2px); }
+      35% { clip: rect(10px, 9999px, 18px, 0); transform: translate(0, 3px); }
+      40% { clip: rect(78px, 9999px, 86px, 0); transform: translate(0, -1px); }
+      45% { clip: rect(42px, 9999px, 50px, 0); transform: translate(0, 2px); }
+      50% { clip: rect(18px, 9999px, 26px, 0); transform: translate(0, -3px); }
+      55% { clip: rect(62px, 9999px, 70px, 0); transform: translate(0, 1px); }
+      60% { clip: rect(30px, 9999px, 38px, 0); transform: translate(0, -2px); }
+      65% { clip: rect(87px, 9999px, 95px, 0); transform: translate(0, 3px); }
+      70% { clip: rect(5px, 9999px, 13px, 0); transform: translate(0, -1px); }
+      75% { clip: rect(70px, 9999px, 78px, 0); transform: translate(0, 2px); }
+      80% { clip: rect(25px, 9999px, 33px, 0); transform: translate(0, -3px); }
+      85% { clip: rect(55px, 9999px, 63px, 0); transform: translate(0, 1px); }
+      90% { clip: rect(12px, 9999px, 20px, 0); transform: translate(0, -2px); }
+      95% { clip: rect(40px, 9999px, 48px, 0); transform: translate(0, 3px); }
+      100% { clip: rect(65px, 9999px, 73px, 0); transform: translate(0, -1px); }
+    }
+    @keyframes glitch-anim2 {
+      0% { clip: rect(65px, 9999px, 73px, 0); transform: translate(0, 2px); }
+      5% { clip: rect(30px, 9999px, 38px, 0); transform: translate(0, -3px); }
+      10% { clip: rect(87px, 9999px, 95px, 0); transform: translate(0, 1px); }
+      15% { clip: rect(5px, 9999px, 13px, 0); transform: translate(0, -2px); }
+      20% { clip: rect(70px, 9999px, 78px, 0); transform: translate(0, 3px); }
+      25% { clip: rect(25px, 9999px, 33px, 0); transform: translate(0, -1px); }
+      30% { clip: rect(55px, 9999px, 63px, 0); transform: translate(0, 2px); }
+      35% { clip: rect(12px, 9999px, 20px, 0); transform: translate(0, -3px); }
+      40% { clip: rect(40px, 9999px, 48px, 0); transform: translate(0, 1px); }
+      45% { clip: rect(18px, 9999px, 26px, 0); transform: translate(0, -2px); }
+      50% { clip: rect(62px, 9999px, 70px, 0); transform: translate(0, 3px); }
+      55% { clip: rect(30px, 9999px, 38px, 0); transform: translate(0, -1px); }
+      60% { clip: rect(78px, 9999px, 86px, 0); transform: translate(0, 2px); }
+      65% { clip: rect(10px, 9999px, 18px, 0); transform: translate(0, -3px); }
+      70% { clip: rect(53px, 9999px, 61px, 0); transform: translate(0, 1px); }
+      75% { clip: rect(15px, 9999px, 23px, 0); transform: translate(0, -2px); }
+      80% { clip: rect(67px, 9999px, 75px, 0); transform: translate(0, 3px); }
+      85% { clip: rect(23px, 9999px, 31px, 0); transform: translate(0, -1px); }
+      90% { clip: rect(85px, 9999px, 93px, 0); transform: translate(0, 2px); }
+      95% { clip: rect(32px, 9999px, 40px, 0); transform: translate(0, -3px); }
+      100% { clip: rect(42px, 9999px, 50px, 0); transform: translate(0, 1px); }
+    }
+    
+    .business-subtitle {
+      font-size: clamp(16px, 3.5vw, 20px);
+      color: var(--neon-blue);
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-shadow: 0 0 10px rgba(0, 217, 255, 0.7);
+      position: relative;
+      display: inline-block;
+    }
+    
+    /* خط زیرین متحرک */
+    .business-subtitle::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 25%;
+      width: 50%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+      animation: scanline 3s infinite linear;
+    }
+    @keyframes scanline {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    /* دکمه‌های گیمینگ پیشرفته */
+    .buttons-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      max-width: 450px;
+      margin: 30px 0;
+    }
+    
+    .gaming-button {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      padding: 18px 25px;
+      background: var(--card-bg);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(0, 217, 255, 0.3);
+      border-radius: 15px;
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      z-index: 1;
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+    
+    /* افکت 3D برای دکمه‌ها */
+    .gaming-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(0, 217, 255, 0.1), rgba(157, 0, 255, 0.1));
+      border-radius: 15px;
+      z-index: -1;
+      transition: all 0.3s ease;
+    }
+    
+    .gaming-button:hover {
+      transform: translateY(-5px) rotateX(5deg);
+      box-shadow: 0 15px 35px rgba(0, 217, 255, 0.4);
+      border-color: var(--neon-blue);
+      color: #fff;
+    }
+    
+    .gaming-button:hover::before {
+      background: linear-gradient(45deg, rgba(0, 217, 255, 0.2), rgba(157, 0, 255, 0.2));
+    }
+    
+    .gaming-button:active {
+      transform: translateY(-2px) rotateX(2deg);
+    }
+    
+    /* موج انفجاری روی کلیک */
+    .gaming-button::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.5);
+      opacity: 0;
+      border-radius: 100%;
+      transform: scale(1, 1) translate(-50%, -50%);
+      transform-origin: 50% 50%;
+    }
+    
+    .gaming-button:focus:not(:active)::after {
+      animation: ripple 1s ease-out;
+    }
+    
+    @keyframes ripple {
+      0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+      }
+      100% {
+        transform: scale(100, 100);
+        opacity: 0;
+      }
+    }
+    
+    .button-icon {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: var(--neon-blue);
+      transition: all 0.3s ease;
+    }
+    
+    .gaming-button:hover .button-icon {
+      color: #fff;
+      text-shadow: 0 0 10px currentColor;
+      transform: scale(1.2);
+    }
+    
+    .button-text {
+      font-family: 'Vazirmatn', sans-serif;
+      font-weight: 600;
+    }
+    
+    /* رنگ‌های مخصوص هر دکمه */
+    .telegram-btn:hover {
+      border-color: #0088cc;
+      box-shadow: 0 15px 35px rgba(0, 136, 204, 0.4);
+    }
+    .telegram-btn .button-icon {
+      color: #0088cc;
+    }
+    .telegram-btn:hover::before {
+      background: linear-gradient(45deg, rgba(0, 136, 204, 0.2), rgba(0, 136, 204, 0.1));
+    }
+    
+    .instagram-btn:hover {
+      border-color: #e1306c;
+      box-shadow: 0 15px 35px rgba(225, 48, 108, 0.4);
+    }
+    .instagram-btn .button-icon {
+      color: #e1306c;
+    }
+    .instagram-btn:hover::before {
+      background: linear-gradient(45deg, rgba(225, 48, 108, 0.2), rgba(225, 48, 108, 0.1));
+    }
+    
+    .location-btn:hover {
+      border-color: #25d366;
+      box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+    }
+    .location-btn .button-icon {
+      color: #25d366;
+    }
+    .location-btn:hover::before {
+      background: linear-gradient(45deg, rgba(37, 211, 102, 0.2), rgba(37, 211, 102, 0.1));
+    }
+    
+    /* بخش آدرس پیشرفته */
+    .address-section {
+      width: 100%;
+      max-width: 800px;
+      margin: 40px 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+      opacity: 0;
+      animation-delay: 0.8s;
+    }
+    
+    .address-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      border: 2px solid rgba(0, 217, 255, 0.3);
+      border-radius: 25px;
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+    
+    /* افکت نوری دور کارت آدرس */
+    .address-card::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple), var(--neon-pink), var(--neon-green));
+      border-radius: 25px;
+      z-index: -1;
+      opacity: 0.7;
+      animation: border-rotate 10s linear infinite;
+    }
+    
+    @keyframes border-rotate {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .address-header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    
+    .address-title {
+      font-family: 'Yekan Bakh', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--neon-blue);
+      margin-bottom: 10px;
+      text-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+    }
+    
+    .address-subtitle {
+      font-size: 16px;
+      color: rgba(224, 230, 237, 0.8);
+    }
+    
+    .address-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+    
+    .address-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .address-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(0, 217, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+    
+    .address-item:hover {
+      transform: translateX(-5px);
+      border-color: var(--neon-blue);
+      box-shadow: 0 5px 15px rgba(0, 217, 255, 0.3);
+    }
+    
+    .address-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 217, 255, 0.1);
+      border-radius: 10px;
+      color: var(--neon-blue);
+      font-size: 20px;
+    }
+    
+    .address-text {
+      flex: 1;
+    }
+    
+    .address-label {
+      font-size: 14px;
+      color: rgba(224, 230, 237, 0.6);
+      margin-bottom: 3px;
+    }
+    
+    .address-value {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-light);
+    }
+    
+    .map-container {
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      height: 300px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .map-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      filter: saturate(1.2) contrast(1.1) hue-rotate(200deg);
+      transition: filter 0.3s ease;
+    }
+    
+    .map-container:hover .map-iframe {
+      filter: saturate(1.4) contrast(1.2) hue-rotate(220deg);
+    }
+    
+    /* نشانگر موقعیت روی نقشه */
+    .map-marker {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      background: var(--neon-red);
+      border-radius: 50% 50% 50% 0;
+      transform: translate(-50%, -100%) rotate(-45deg);
+      box-shadow: 0 0 20px rgba(255, 0, 64, 0.8);
+      animation: marker-pulse 2s infinite;
+      z-index: 10;
+    }
+    
+    .map-marker::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: var(--neon-red);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+    @keyframes marker-pulse {
+      0% { box-shadow: 0 0 20px rgba(255, 0, 64, 0.8); }
+      50% { box-shadow: 0 0 40px rgba(255, 0, 64, 1); }
+      100% { box-shadow: 0 0 20px rgba(255, 0, 64, 0.8); }
+    }
+    
+    /* ساعت کاری */
+    .working-hours {
+      margin-top: 25px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(0, 217, 255, 0.2);
+      text-align: center;
+    }
+    
+    .hours-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--neon-green);
+      margin-bottom: 10px;
+    }
+    
+    .hours-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 15px;
+    }
+    
+    .hours-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 12px;
+      background: rgba(0, 255, 136, 0.1);
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    
+    .hours-day {
+      color: rgba(224, 230, 237, 0.8);
+    }
+    
+    .hours-time {
+      color: var(--neon-green);
+      font-weight: 600;
+    }
+    
+    /* فوتر پیشرفته */
+    .footer {
+      margin-top: auto;
+      padding: 25px;
+      text-align: center;
+      color: rgba(224, 230, 237, 0.7);
+      font-size: 16px;
+      background: rgba(15, 21, 47, 0.5);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(0, 217, 255, 0.2);
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* افکت موج در فوتر */
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.2), transparent);
+      animation: wave 6s linear infinite;
+    }
+    
+    @keyframes wave {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+    
+    .footer strong {
+      color: var(--neon-blue);
+      font-weight: 700;
+      text-shadow: 0 0 8px rgba(0, 217, 255, 0.7);
+    }
+    
+    /* انیمیشن‌ها */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .gaming-button {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    
+    .gaming-button:nth-child(1) { animation-delay: 0.2s; }
+    .gaming-button:nth-child(2) { animation-delay: 0.4s; }
+    .gaming-button:nth-child(3) { animation-delay: 0.6s; }
+    
+    /* ریسپانسیو */
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+      }
+      
+      .profile-image {
+        width: 150px;
+        height: 150px;
+      }
+      
+      .profile-rings {
+        width: 150px;
+        height: 150px;
+      }
+      
+      .buttons-container {
+        max-width: 380px;
+      }
+      
+      .gaming-button {
+        padding: 16px 20px;
+        font-size: 16px;
+      }
+      
+      .address-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .map-container {
+        height: 250px;
+      }
+      
+      .hours-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .buttons-container {
+        max-width: 320px;
+      }
+      
+      .gaming-button {
+        padding: 14px 18px;
+        font-size: 15px;
+        gap: 12px;
+      }
+      
+      .button-icon {
+        width: 24px;
+        height: 24px;
+        font-size: 20px;
+      }
+      
+      .address-card {
+        padding: 20px;
+      }
+      
+      .address-item {
+        padding: 12px;
+        gap: 12px;
+      }
+      
+      .address-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- بک‌گراند گرادیان متحرک -->
+  <div class="animated-bg"></div>
+  
+  <!-- لایه‌های نوری متحرک -->
+  <div class="light-layer">
+    <div class="light-orb orb1"></div>
+    <div class="light-orb orb2"></div>
+    <div class="light-orb orb3"></div>
+  </div>
+  
+  <!-- شبکه سه‌بعدی متحرک -->
+  <div class="grid-3d">
+    <div class="grid-plane"></div>
+  </div>
+  
+  <!-- ذرات دیجیتال متحرک -->
+  <div class="digital-particles" id="digital-particles"></div>
+  
+  <!-- اشکال هندسی متحرک -->
+  <div class="geometric-shapes" id="geometric-shapes"></div>
+  
+  <!-- خطوط لیزری متحرک -->
+  <div class="laser-lines" id="laser-lines"></div>
+  
+  <!-- موج‌های سینوسی -->
+  <div class="sine-waves">
+    <div class="wave wave1"></div>
+    <div class="wave wave2"></div>
+    <div class="wave wave3"></div>
+  </div>
+  
+  <div class="container">
+    <!-- هدر -->
+    <div class="header">
+      <div class="profile-container">
+        <div class="profile-rings"></div>
+        <img src="photo_۲۰۲۵-۰۹-۰۵_۰۰-۴۶-۳۷.png" alt="لوگو FUSION" class="profile-image">
+      </div>
+      <h1 class="business-name glitch">FUSION</h1>
+      <p class="business-subtitle">مرکز تخصصی تجهیزات کامپیوتری</p>
+    </div>
+    
+    <!-- دکمه‌های شبکه اجتماعی -->
+    <div class="buttons-container">
+      <a href="https://t.me/FUSIONTABRIZ" target="_blank" class="gaming-button telegram-btn">
+        <div class="button-icon">
+          <i class="fab fa-telegram-plane"></i>
+        </div>
+        <span class="button-text">کانال تلگرام</span>
+      </a>
+      
+      <a href="https://instagram.com/FUSIONTABRIZ" target="_blank" class="gaming-button instagram-btn">
+        <div class="button-icon">
+          <i class="fab fa-instagram"></i>
+        </div>
+        <span class="button-text">صفحه اینستاگرام</span>
+      </a>
+      
+      <a href="#address" class="gaming-button location-btn">
+        <div class="button-icon">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <span class="button-text">آدرس مغازه</span>
+      </a>
+    </div>
+    
+    <!-- بخش آدرس -->
+    <div id="address" class="address-section">
+      <div class="address-card">
+        <div class="address-header">
+          <h2 class="address-title">اطلاعات تماس و آدرس</h2>
+          <p class="address-subtitle">ما اینجا منتظر شما هستیم</p>
+        </div>
+        
+        <div class="address-content">
+          <div class="address-info">
+            <div class="address-item">
+              <div class="address-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="address-text">
+                <div class="address-label">آدرس دقیق</div>
+                <div class="address-value">مجتمع کامپیوتری سهند، طبقه همکف، پلاک 24</div>
+              </div>
+            </div>
+            
+            <div class="address-item">
+              <div class="address-icon">
+                <i class="fas fa-city"></i>
+              </div>
+              <div class="address-text">
+                <div class="address-label">شهر</div>
+                <div class="address-value"> تبریز </div>
+              </div>
+            </div>
+            
+            <div class="address-item">
+              <div class="address-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="address-text">
+                <div class="address-label">تلفن ثابت</div>
+                <div class="address-value">041-3536-969</div>
+              </div>
+            </div>
+            
+            <div class="address-item">
+              <div class="address-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="address-text">
+                <div class="address-label">ایمیل</div>
+                <div class="address-value">fusiontabriz@gmail.com</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-container">
+            <div class="map-marker"></div>
+            <iframe 
+              class="map-iframe"
+              src="https://www.google.com/maps?q=38.07443,46.29165&z=16&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+        
+        <!-- ساعت کاری -->
+        <div class="working-hours">
+          <h3 class="hours-title">ساعت کاری</h3>
+          <div class="hours-grid">
+            <div class="hours-item">
+              <span class="hours-day">شنبه تا پنجشنبه</span>
+              <span class="hours-time">09:00 - 22:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- فوتر -->
+    <div class="footer">
+      طراحی و توسعه توسط <strong>احسان فضلی</strong> | © 2025 FUSION
+    </div>
+  </div>
+  
+  <!-- اسکریپت‌های انیمیشن -->
+  <script>
+    // ایجاد ذرات دیجیتال
+    document.addEventListener('DOMContentLoaded', function() {
+      const digitalParticles = document.getElementById('digital-particles');
+      const particleCount = 50;
+      const characters = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('digital-particle');
+        
+        // کاراکتر تصادفی
+        const char = characters[Math.floor(Math.random() * characters.length)];
+        particle.textContent = char;
+        
+        // موقعیت تصادفی
+        const posX = Math.random() * 100;
+        particle.style.left = `${posX}%`;
+        
+        // تاخیر تصادفی
+        const delay = Math.random() * 15;
+        particle.style.animationDelay = `${delay}s`;
+        
+        // مدت زمان تصادفی
+        const duration = Math.random() * 10 + 10;
+        particle.style.animationDuration = `${duration}s`;
+        
+        // رنگ تصادفی
+        const colors = ['#00d9ff', '#9d00ff', '#ff0080', '#00ff88', '#ff9500'];
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        particle.style.color = color;
+        
+        digitalParticles.appendChild(particle);
+      }
+    });
+    
+    // ایجاد اشکال هندسی
+    document.addEventListener('DOMContentLoaded', function() {
+      const geometricShapes = document.getElementById('geometric-shapes');
+      const shapeCount = 15;
+      const shapes = ['triangle', 'square', 'hexagon'];
+      
+      for (let i = 0; i < shapeCount; i++) {
+        const shape = document.createElement('div');
+        const shapeType = shapes[Math.floor(Math.random() * shapes.length)];
+        shape.classList.add('shape', shapeType);
+        
+        // موقعیت تصادفی
+        const posX = Math.random() * 100;
+        const posY = Math.random() * 100;
+        shape.style.left = `${posX}%`;
+        shape.style.top = `${posY}%`;
+        
+        // تاخیر تصادفی
+        const delay = Math.random() * 20;
+        shape.style.animationDelay = `${delay}s`;
+        
+        // اندازه تصادفی
+        const scale = Math.random() * 0.5 + 0.5;
+        shape.style.transform = `scale(${scale})`;
+        
+        geometricShapes.appendChild(shape);
+      }
+    });
+    
+    // ایجاد خطوط لیزری
+    document.addEventListener('DOMContentLoaded', function() {
+      const laserLines = document.getElementById('laser-lines');
+      const lineCount = 5;
+      
+      for (let i = 0; i < lineCount; i++) {
+        const line = document.createElement('div');
+        line.classList.add('laser-line');
+        
+        // موقعیت عمودی تصادفی
+        const posY = Math.random() * 100;
+        line.style.top = `${posY}%`;
+        
+        // تاخیر تصادفی
+        const delay = Math.random() * 8;
+        line.style.animationDelay = `${delay}s`;
+        
+        // رنگ تصادفی
+        const colors = ['#00d9ff', '#9d00ff', '#ff0080', '#00ff88'];
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        line.style.background = `linear-gradient(90deg, transparent, ${color}, transparent)`;
+        
+        laserLines.appendChild(line);
+      }
+    });
+    
+    // اسکرول نرم به بخش آدرس
+    document.querySelector('.location-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('address').scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      });
+    });
+  </script>
+  
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ComputerStore",
+    "name": "FUSION",
+    "description": "مرکز تخصصی تجهیزات کامپیوتری",
+    "image": "https://via.placeholder.com/180",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "مجتمع کامپیوتری سهند، طبقه همکف، پلاک 24",
+      "addressLocality": "تبریز",
+      "addressCountry": "IR"
+    },
+    "telephone": "+98-41-33334444",
+    "email": "info@fusiontabriz.com",
+    "openingHours": [
+      "Mo-Th 09:00-22:00",
+      "Fr 09:00-21:00",
+      "Sa 14:00-20:00"
+    ],
+    "sameAs": [
+      "https://t.me/FUSIONTABRIZ",
+      "https://instagram.com/FUSIONTABRIZ"
+    ]
+  }
+  </script>
+</body>
+</html>
