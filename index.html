@@ -7,59 +7,62 @@
   <meta name="theme-color" content="#111">
   <title>Fusion Tabriz | فیوژن تبریز</title>
   <link rel="icon" href="img/logo.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap" rel="stylesheet">
-  
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Vazirmatn', sans-serif;
       background: #f3f2eb;
+      color: #111;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
-      color: #111;
     }
 
     .container {
-      text-align: center;
-      padding: 40px 15px;
       width: 100%;
       max-width: 480px;
+      padding: 30px 15px 50px;
+      text-align: center;
     }
 
     img {
-      width: 120px;
-      margin-bottom: 15px;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.25));
+      width: 95px;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
       border-radius: 12px;
     }
 
     .title {
-      font-size: 28px;
-      margin-bottom: 30px;
+      font-size: 22px;
+      margin-bottom: 25px;
       font-weight: 600;
     }
 
     .btn {
       display: block;
-      width: 280px;
-      height: 55px;
-      margin: 12px auto;
-      line-height: 55px;
-      border-radius: 15px;
+      width: 100%;
+      max-width: 260px;
+      height: 48px;
+      margin: 10px auto;
+      line-height: 48px;
+      border-radius: 12px;
       color: #fff;
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 600;
       text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
       transition: transform 0.2s ease, opacity 0.2s ease;
     }
 
     .btn:hover {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
       opacity: 0.9;
     }
 
@@ -74,24 +77,24 @@
     .address-box {
       background: #222;
       color: #fff;
-      border-radius: 25px;
-      padding: 25px 20px;
-      margin-top: 40px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      border-radius: 20px;
+      padding: 20px 15px;
+      margin-top: 30px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.25);
       text-align: center;
     }
 
     .address-box h2 {
-      margin: 0 0 15px;
-      font-size: 20px;
+      font-size: 18px;
+      margin-bottom: 10px;
     }
 
     .map-container {
       width: 100%;
-      height: 220px;
-      border-radius: 15px;
+      height: 180px;
+      border-radius: 12px;
       overflow: hidden;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
     iframe {
@@ -101,39 +104,40 @@
     }
 
     .address-text {
-      font-size: 14px;
-      line-height: 1.8;
-      margin-bottom: 10px;
+      font-size: 13px;
+      line-height: 1.7;
+      margin-bottom: 8px;
     }
 
     .section-title {
       font-weight: 600;
-      font-size: 16px;
-      margin: 12px 0 8px;
+      font-size: 15px;
+      margin: 10px 0 6px;
     }
 
     hr {
       border: none;
       border-top: 1px solid rgba(255,255,255,0.3);
-      margin: 12px 0;
+      margin: 10px 0;
     }
 
     .contact-buttons {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
       align-items: center;
     }
 
     .call-btn {
-      width: 90%;
-      max-width: 300px;
-      padding: 10px 0;
-      border-radius: 10px;
+      width: 100%;
+      max-width: 260px;
+      padding: 8px 0;
+      border-radius: 8px;
       background: #fff;
       color: #111;
       font-weight: 600;
       text-decoration: none;
+      font-size: 14px;
       transition: background 0.3s;
     }
 
@@ -145,25 +149,37 @@
       margin-top: auto;
       width: 100%;
       text-align: center;
-      padding: 15px 0;
+      padding: 12px 0;
       background: #0c0c0c;
-      color: #f0f0f0;
-      font-size: 12px;
-      letter-spacing: 0.5px;
+      color: #eee;
+      font-size: 11.5px;
       border-top: 1px solid rgba(255,255,255,0.1);
     }
 
     footer span {
       color: #0af;
-      font-weight: bold;
+      font-weight: 600;
     }
 
-    @media (max-width: 480px) {
-      img { width: 90px; }
-      .title { font-size: 22px; }
-      .btn { width: 90%; font-size: 16px; }
-      .address-box { padding: 20px 15px; }
-      .address-text { font-size: 13px; }
+    /* 📱 بهینه‌سازی دقیق‌تر برای موبایل‌های خیلی کوچک */
+    @media (max-width: 360px) {
+      .title {
+        font-size: 20px;
+      }
+      .btn {
+        font-size: 15px;
+        height: 44px;
+        line-height: 44px;
+      }
+      .address-box {
+        padding: 15px 10px;
+      }
+      .address-text {
+        font-size: 12.5px;
+      }
+      .call-btn {
+        font-size: 13px;
+      }
     }
   </style>
 </head>
