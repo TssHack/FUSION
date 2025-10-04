@@ -3,103 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="فیوژن تبریز | فروش و خدمات تخصصی تجهیزات کامپیوتری در تبریز">
+  <meta name="theme-color" content="#111">
   <title>Fusion Tabriz | فیوژن تبریز</title>
-  <meta name="description" content="فیوژن تبریز - فروش و خدمات تخصصی در مجتمع کامپیوتری سهند تبریز.">
-  <link rel="icon" href="img/logo.png">
+  <link rel="icon" href="img/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap" rel="stylesheet">
   
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap');
-
-    @font-face {
-      font-family: 'Ray';
-      src: url('fonts/Ray.ttf') format('truetype');
-      font-display: swap;
-    }
-
-    :root {
-      --bg: #f3f2eb;
-      --dark: #111;
-      --accent: #0af;
-    }
-
     body {
       margin: 0;
       font-family: 'Vazirmatn', sans-serif;
-      background: var(--bg);
+      background: #f3f2eb;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
+      color: #111;
     }
 
     .container {
       text-align: center;
-      padding: 40px 15px 0;
+      padding: 40px 15px;
       width: 100%;
-      box-sizing: border-box;
+      max-width: 480px;
     }
 
     img {
       width: 120px;
       margin-bottom: 15px;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-      user-select: none;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.25));
+      border-radius: 12px;
     }
 
     .title {
-      font-family: 'Ray', 'Vazirmatn', sans-serif;
-      font-size: 32px;
-      margin-bottom: 35px;
-      color: var(--dark);
+      font-size: 28px;
+      margin-bottom: 30px;
+      font-weight: 600;
     }
 
     .btn {
       display: block;
       width: 280px;
-      height: 60px;
-      margin: 15px auto;
-      line-height: 60px;
+      height: 55px;
+      margin: 12px auto;
+      line-height: 55px;
       border-radius: 15px;
       color: #fff;
-      font-size: 18px;
-      text-decoration: none;
+      font-size: 17px;
       font-weight: 600;
+      text-decoration: none;
       box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      transition: transform 0.2s ease, opacity 0.3s;
-      cursor: pointer;
-      user-select: none;
+      transition: transform 0.2s ease, opacity 0.2s ease;
     }
 
-    .btn:hover { transform: translateY(-3px); opacity: 0.95; }
-    .btn:active { transform: scale(0.98); }
+    .btn:hover {
+      transform: translateY(-3px);
+      opacity: 0.9;
+    }
 
-    .telegram { background: linear-gradient(90deg, #00c6ff, #0072ff); }
-    .instagram { background: linear-gradient(90deg, #fc466b, #3f5efb); }
-    .address { background: linear-gradient(90deg, #333, #111); }
+    .telegram {
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+    }
+
+    .instagram {
+      background: linear-gradient(90deg, #fc466b, #3f5efb);
+    }
 
     .address-box {
-      width: 90%;
-      max-width: 400px;
-      background: #333;
+      background: #222;
       color: #fff;
       border-radius: 25px;
       padding: 25px 20px;
-      margin: 30px auto;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      margin-top: 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       text-align: center;
-      display: none;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
     }
 
-    .address-box.show {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
+    .address-box h2 {
+      margin: 0 0 15px;
+      font-size: 20px;
     }
-
-    .address-box h2 { margin: 0 0 15px; font-size: 22px; }
 
     .map-container {
       width: 100%;
@@ -109,30 +94,34 @@
       margin-bottom: 15px;
     }
 
-    iframe { width: 100%; height: 100%; border: none; }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
 
     .address-text {
       font-size: 14px;
       line-height: 1.8;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
     .section-title {
-      font-weight: bold;
-      font-size: 18px;
-      margin: 15px 0 10px;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 12px 0 8px;
     }
 
     hr {
       border: none;
       border-top: 1px solid rgba(255,255,255,0.3);
-      margin: 10px 0;
+      margin: 12px 0;
     }
 
     .contact-buttons {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
       align-items: center;
     }
 
@@ -142,13 +131,15 @@
       padding: 10px 0;
       border-radius: 10px;
       background: #fff;
-      color: var(--dark);
-      font-weight: bold;
+      color: #111;
+      font-weight: 600;
       text-decoration: none;
       transition: background 0.3s;
     }
 
-    .call-btn:hover { background: #ddd; }
+    .call-btn:hover {
+      background: #ddd;
+    }
 
     footer {
       margin-top: auto;
@@ -158,21 +149,19 @@
       background: #0c0c0c;
       color: #f0f0f0;
       font-size: 12px;
+      letter-spacing: 0.5px;
       border-top: 1px solid rgba(255,255,255,0.1);
     }
 
-    footer span { color: var(--accent); font-weight: bold; }
+    footer span {
+      color: #0af;
+      font-weight: bold;
+    }
 
     @media (max-width: 480px) {
       img { width: 90px; }
-      .title { font-size: 24px; }
-      .btn {
-        width: 90%;
-        min-width: 230px;
-        height: 55px;
-        font-size: 17px;
-        line-height: 55px;
-      }
+      .title { font-size: 22px; }
+      .btn { width: 90%; font-size: 16px; }
       .address-box { padding: 20px 15px; }
       .address-text { font-size: 13px; }
     }
@@ -180,27 +169,30 @@
 </head>
 <body>
   <div class="container">
-    <img src="img/logo.png" alt="Fusion Tabriz Logo">
+    <img src="img/logo.png" alt="لوگوی فیوژن تبریز" loading="lazy">
     <div class="title">فیوژن تبریز</div>
-
+    
     <a href="https://t.me/FUSIONTABRIZ" class="btn telegram" target="_blank" rel="noopener">تلگرام ما</a>
     <a href="https://instagram.com/FUSIONTABRIZ" class="btn instagram" target="_blank" rel="noopener">اینستاگرام ما</a>
-    <div class="btn address" onclick="toggleAddress()">آدرس ما</div>
 
-    <div id="address-box" class="address-box">
+    <div class="address-box">
       <h2>آدرس</h2>
       <div class="map-container">
-        <iframe src="https://www.google.com/maps?q=38.074444,46.291639&hl=fa&z=15&output=embed"
-                allowfullscreen loading="lazy"></iframe>
+        <iframe 
+          src="https://www.google.com/maps?q=38.074444,46.291639&hl=fa&z=15&output=embed" 
+          loading="lazy" 
+          title="نقشه محل فیوژن تبریز" 
+          allowfullscreen>
+        </iframe>
       </div>
 
       <div class="address-text">
-        خیابان امام، سه راهی طالقانی، مجتمع کامپیوتری سهند، طبقه همکف، پلاک 24
+        خیابان امام، سه‌راهی طالقانی، مجتمع کامپیوتری سهند، طبقه همکف، پلاک 24
       </div>
       <hr>
 
       <div class="section-title">ساعت کاری</div>
-      <div>شنبه تا پنج‌شنبه / ساعت 10:30 الی 20:30</div>
+      <div>شنبه تا پنج‌شنبه / ساعت 10:30 تا 20:30</div>
       <hr>
 
       <div class="section-title">تماس با ما</div>
@@ -212,19 +204,7 @@
   </div>
 
   <footer>
-    طراحی شده توسط <span>نکزو تیم</span> | تمام حقوق متعلق به <span>فیوژن تبریز</span> است.
+    طراحی و توسعه توسط <span>نکزو تیم</span> | تمامی حقوق متعلق به <span>فیوژن تبریز</span> است.
   </footer>
-
-  <script>
-    function toggleAddress() {
-      const box = document.getElementById("address-box");
-      box.classList.toggle("show");
-      if (box.classList.contains("show")) {
-        setTimeout(() => {
-          box.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 200);
-      }
-    }
-  </script>
 </body>
 </html>
