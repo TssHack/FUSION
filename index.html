@@ -6,6 +6,13 @@
   <title>Fusion Tabriz</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap');
+    /* فونت Ray (در صورت داشتن فایل محلی جایگزین کن) */
+    @font-face {
+      font-family: 'Ray';
+      src: url('fonts/Ray.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
 
     body {
       margin: 0;
@@ -19,18 +26,26 @@
 
     .container {
       text-align: center;
-      padding-top: 50px;
+      padding-top: 40px;
+      width: 100%;
     }
 
     img {
-      width: 100px;
-      margin-bottom: 40px;
+      width: 120px;
+      margin-bottom: 15px;
       filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    }
+
+    .title {
+      font-family: 'Ray', 'Vazirmatn', sans-serif;
+      font-size: 28px;
+      margin-bottom: 35px;
+      color: #111;
     }
 
     .btn {
       display: block;
-      width: 260px;
+      width: 280px;
       height: 60px;
       margin: 15px auto;
       line-height: 60px;
@@ -100,14 +115,21 @@
       font-weight: bold;
     }
 
+    /* ریسپانسیو */
     @media (max-width: 480px) {
       img {
-        width: 80px;
+        width: 90px;
+      }
+      .title {
+        font-size: 22px;
+        margin-bottom: 25px;
       }
       .btn {
-        width: 80%;
+        width: 90%;
+        min-width: 230px;
         height: 55px;
-        font-size: 16px;
+        font-size: 17px;
+        line-height: 55px;
       }
       .map-container {
         height: 250px;
@@ -118,6 +140,7 @@
 <body>
   <div class="container">
     <img src="img/logo.png" alt="Fusion Tabriz Logo">
+    <div class="title">فیوژن تبریز</div>
     
     <a href="https://t.me/FUSIONTABRIZ" class="btn telegram" target="_blank">تلگرام ما</a>
     <a href="https://instagram.com/FUSIONTABRIZ" class="btn instagram" target="_blank">اینستاگرام ما</a>
