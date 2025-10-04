@@ -3,21 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fusion Tabriz</title>
+  <title>Fusion Tabriz | فیوژن تبریز</title>
+  <meta name="description" content="فیوژن تبریز - فروش و خدمات تخصصی در مجتمع کامپیوتری سهند تبریز.">
+  <link rel="icon" href="img/logo.png">
+  
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap');
-    /* فونت Ray (در صورت داشتن فایل محلی جایگزین کن) */
+
     @font-face {
       font-family: 'Ray';
       src: url('fonts/Ray.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --bg: #f3f2eb;
+      --dark: #111;
+      --accent: #0af;
     }
 
     body {
       margin: 0;
       font-family: 'Vazirmatn', sans-serif;
-      background-color: #f3f2eb;
+      background: var(--bg);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -26,21 +34,23 @@
 
     .container {
       text-align: center;
-      padding-top: 40px;
+      padding: 40px 15px 0;
       width: 100%;
+      box-sizing: border-box;
     }
 
     img {
       width: 120px;
       margin-bottom: 15px;
       filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+      user-select: none;
     }
 
     .title {
       font-family: 'Ray', 'Vazirmatn', sans-serif;
-      font-size: 28px;
+      font-size: 32px;
       margin-bottom: 35px;
-      color: #111;
+      color: var(--dark);
     }
 
     .btn {
@@ -50,53 +60,95 @@
       margin: 15px auto;
       line-height: 60px;
       border-radius: 15px;
-      color: white;
+      color: #fff;
       font-size: 18px;
       text-decoration: none;
       font-weight: 600;
       box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, opacity 0.3s;
       cursor: pointer;
+      user-select: none;
     }
 
-    .btn:hover {
-      transform: translateY(-3px);
+    .btn:hover { transform: translateY(-3px); opacity: 0.95; }
+    .btn:active { transform: scale(0.98); }
+
+    .telegram { background: linear-gradient(90deg, #00c6ff, #0072ff); }
+    .instagram { background: linear-gradient(90deg, #fc466b, #3f5efb); }
+    .address { background: linear-gradient(90deg, #333, #111); }
+
+    .address-box {
+      width: 90%;
+      max-width: 400px;
+      background: #333;
+      color: #fff;
+      border-radius: 25px;
+      padding: 25px 20px;
+      margin: 30px auto;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      text-align: center;
+      display: none;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
     }
 
-    .telegram {
-      background: linear-gradient(90deg, #00c6ff, #0072ff);
+    .address-box.show {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .instagram {
-      background: linear-gradient(90deg, #fc466b, #3f5efb);
-    }
-
-    .address {
-      background: linear-gradient(90deg, #333, #111);
-    }
+    .address-box h2 { margin: 0 0 15px; font-size: 22px; }
 
     .map-container {
-      display: none;
-      width: 90%;
-      max-width: 600px;
-      height: 350px;
-      margin: 30px auto;
+      width: 100%;
+      height: 220px;
       border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      animation: fadeIn 0.5s ease-in-out;
+      margin-bottom: 15px;
     }
 
-    iframe {
-      width: 100%;
-      height: 100%;
+    iframe { width: 100%; height: 100%; border: none; }
+
+    .address-text {
+      font-size: 14px;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .section-title {
+      font-weight: bold;
+      font-size: 18px;
+      margin: 15px 0 10px;
+    }
+
+    hr {
       border: none;
+      border-top: 1px solid rgba(255,255,255,0.3);
+      margin: 10px 0;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    .contact-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
     }
+
+    .call-btn {
+      width: 90%;
+      max-width: 300px;
+      padding: 10px 0;
+      border-radius: 10px;
+      background: #fff;
+      color: var(--dark);
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .call-btn:hover { background: #ddd; }
 
     footer {
       margin-top: auto;
@@ -106,24 +158,14 @@
       background: #0c0c0c;
       color: #f0f0f0;
       font-size: 12px;
-      letter-spacing: 0.5px;
       border-top: 1px solid rgba(255,255,255,0.1);
     }
 
-    footer span {
-      color: #0af;
-      font-weight: bold;
-    }
+    footer span { color: var(--accent); font-weight: bold; }
 
-    /* ریسپانسیو */
     @media (max-width: 480px) {
-      img {
-        width: 90px;
-      }
-      .title {
-        font-size: 22px;
-        margin-bottom: 25px;
-      }
+      img { width: 90px; }
+      .title { font-size: 24px; }
       .btn {
         width: 90%;
         min-width: 230px;
@@ -131,9 +173,8 @@
         font-size: 17px;
         line-height: 55px;
       }
-      .map-container {
-        height: 250px;
-      }
+      .address-box { padding: 20px 15px; }
+      .address-text { font-size: 13px; }
     }
   </style>
 </head>
@@ -141,17 +182,32 @@
   <div class="container">
     <img src="img/logo.png" alt="Fusion Tabriz Logo">
     <div class="title">فیوژن تبریز</div>
-    
-    <a href="https://t.me/FUSIONTABRIZ" class="btn telegram" target="_blank">تلگرام ما</a>
-    <a href="https://instagram.com/FUSIONTABRIZ" class="btn instagram" target="_blank">اینستاگرام ما</a>
-    <div class="btn address" onclick="toggleMap()">آدرس ما</div>
 
-    <div id="map" class="map-container">
-      <iframe
-        src="https://www.google.com/maps?q=38.074444,46.291639&hl=fa&z=15&output=embed"
-        allowfullscreen
-        loading="lazy">
-      </iframe>
+    <a href="https://t.me/FUSIONTABRIZ" class="btn telegram" target="_blank" rel="noopener">تلگرام ما</a>
+    <a href="https://instagram.com/FUSIONTABRIZ" class="btn instagram" target="_blank" rel="noopener">اینستاگرام ما</a>
+    <div class="btn address" onclick="toggleAddress()">آدرس ما</div>
+
+    <div id="address-box" class="address-box">
+      <h2>آدرس</h2>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps?q=38.074444,46.291639&hl=fa&z=15&output=embed"
+                allowfullscreen loading="lazy"></iframe>
+      </div>
+
+      <div class="address-text">
+        خیابان امام، سه راهی طالقانی، مجتمع کامپیوتری سهند، طبقه همکف، پلاک 24
+      </div>
+      <hr>
+
+      <div class="section-title">ساعت کاری</div>
+      <div>شنبه تا پنج‌شنبه / ساعت 10:30 الی 20:30</div>
+      <hr>
+
+      <div class="section-title">تماس با ما</div>
+      <div class="contact-buttons">
+        <a href="tel:09143251638" class="call-btn">بیگی - 09143251638</a>
+        <a href="tel:09991537542" class="call-btn">مقدم - 09991537542</a>
+      </div>
     </div>
   </div>
 
@@ -160,11 +216,13 @@
   </footer>
 
   <script>
-    function toggleMap() {
-      const map = document.getElementById("map");
-      map.style.display = map.style.display === "block" ? "none" : "block";
-      if (map.style.display === "block") {
-        window.scrollTo({ top: map.offsetTop - 60, behavior: 'smooth' });
+    function toggleAddress() {
+      const box = document.getElementById("address-box");
+      box.classList.toggle("show");
+      if (box.classList.contains("show")) {
+        setTimeout(() => {
+          box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 200);
       }
     }
   </script>
