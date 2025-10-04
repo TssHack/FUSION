@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fusion Tabriz</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Vazirmatn', sans-serif;
+      background-color: #f3f2eb;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    img {
+      width: 100px;
+      margin-bottom: 40px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    }
+
+    .btn {
+      display: block;
+      width: 260px;
+      height: 60px;
+      margin: 15px auto;
+      line-height: 60px;
+      border-radius: 15px;
+      color: white;
+      font-size: 18px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .telegram {
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+    }
+
+    .instagram {
+      background: linear-gradient(90deg, #fc466b, #3f5efb);
+    }
+
+    .address {
+      background: linear-gradient(90deg, #333, #111);
+    }
+
+    .map-container {
+      display: none;
+      width: 90%;
+      max-width: 600px;
+      height: 350px;
+      margin: 30px auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      margin-top: auto;
+      width: 100%;
+      text-align: center;
+      padding: 15px 0;
+      background: #0c0c0c;
+      color: #f0f0f0;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    footer span {
+      color: #0af;
+      font-weight: bold;
+    }
+
+    @media (max-width: 480px) {
+      img {
+        width: 80px;
+      }
+      .btn {
+        width: 80%;
+        height: 55px;
+        font-size: 16px;
+      }
+      .map-container {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="img/logo.png" alt="Fusion Tabriz Logo">
+    
+    <a href="https://t.me/FUSIONTABRIZ" class="btn telegram" target="_blank">تلگرام ما</a>
+    <a href="https://instagram.com/FUSIONTABRIZ" class="btn instagram" target="_blank">اینستاگرام ما</a>
+    <div class="btn address" onclick="toggleMap()">آدرس ما</div>
+
+    <div id="map" class="map-container">
+      <iframe
+        src="https://www.google.com/maps?q=38.074444,46.291639&hl=fa&z=15&output=embed"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+  <footer>
+    طراحی شده توسط <span>نکزو تیم</span> | تمام حقوق متعلق به <span>فیوژن تبریز</span> است.
+  </footer>
+
+  <script>
+    function toggleMap() {
+      const map = document.getElementById("map");
+      map.style.display = map.style.display === "block" ? "none" : "block";
+      if (map.style.display === "block") {
+        window.scrollTo({ top: map.offsetTop - 60, behavior: 'smooth' });
+      }
+    }
+  </script>
+</body>
+</html>
